@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+atomicwrites = "*"
+attrs = "*"
+certifi = "*"
+chardet = "*"
+colorama = "*"
+et-xmlfile = "*"
+idna = "*"
+importlib-metadata = "*"
+iniconfig = "*"
+more-itertools = "*"
+numpy = "*"
+openpyxl = "*"
+packaging = "*"
+pandas = "*"
+pluggy = "*"
+py = "*"
+pyparsing = "*"
+pytest = "*"
+pytest-html = "*"
+pytest-metadata = "*"
+python-dateutil = "*"
+pytz = "*"
+requests = "*"
+selenium = "*"
+six = "*"
+toml = "*"
+urllib3 = "*"
+zipp = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

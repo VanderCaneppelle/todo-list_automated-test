@@ -1,0 +1,48 @@
+2023-04-19 20:47:47,070 :INFO : test_1_insert_address :Reserve Bar - Address insertion testing started 
+2023-04-19 20:48:02,168 :INFO : test_1_insert_address :Test Success
+2023-04-19 20:48:02,168 :INFO : test_1_insert_address :Test Success
+2023-04-19 20:48:02,170 :INFO : test_2_search_bar_query :Reserve Bar - Search Bar query test started 
+2023-04-19 20:48:14,870 :INFO : test_2_search_bar_query :Reserve Bar - Search Bar query test >> PASS << 
+2023-04-19 20:48:14,870 :INFO : test_2_search_bar_query :Reserve Bar - Search Bar query test >> PASS << 
+2023-04-19 20:48:14,878 :INFO : test_3_select_product_from_plp :Reserve Bar - Select PLP item started 
+2023-04-19 20:48:23,668 :INFO : test_3_select_product_from_plp :Reserve Bar - Select PLP item  >> PASS <<
+2023-04-19 20:48:23,668 :INFO : test_3_select_product_from_plp :Reserve Bar - Select PLP item  >> PASS <<
+2023-04-19 20:48:23,668 :INFO : test_4_add_engraving_and_add_to_cart :Reserver Bar - Select ship delivery method started
+2023-04-19 20:48:32,445 :INFO : test_4_add_engraving_and_add_to_cart :Reserver Bar - Select ship delivery methodo>> PASS <<
+2023-04-19 20:48:32,445 :INFO : test_4_add_engraving_and_add_to_cart :Reserver Bar - Select ship delivery methodo>> PASS <<
+2023-04-19 20:48:32,450 :INFO : test_5_go_checkout :Reserver Bar - Go to Checkout started
+2023-04-19 20:48:45,819 :INFO : test_5_go_checkout :Reserver Bar - Go to Checkout >> PASS <<
+2023-04-19 20:48:45,819 :INFO : test_5_go_checkout :Reserver Bar - Go to Checkout >> PASS <<
+2023-04-19 20:48:45,824 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,824 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,824 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,828 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,828 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,828 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 20:48:45,828 :INFO : test_5_go_checkout :{'product': 'Woodford Reserve Double Oaked Bourbon', 'engraving': 'engraving test', 'price': '$123.99'}
+2023-04-19 21:07:45,068 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:08:49,360 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:09:30,115 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:31:32,313 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:35:02,564 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:36:05,424 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:36:33,554 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:37:09,978 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:37:29,634 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:39:20,495 :INFO : test_1_insert_address :Todo List - Add New To Do
+2023-04-19 21:40:43,001 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:47:41,801 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:47:44,688 :INFO : test_2_remove_todo_item :Todo List - Remove To Do Item 
+2023-04-19 21:49:45,104 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:52:39,746 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:53:58,420 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:54:00,873 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-19 21:54:00,873 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-19 21:55:51,822 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:56:43,544 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:57:12,539 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 21:57:14,832 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-19 21:57:14,832 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-19 22:00:02,012 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do
+2023-04-19 22:00:04,669 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-19 22:00:04,669 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS

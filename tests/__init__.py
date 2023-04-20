@@ -33,24 +33,3 @@ class BaseClass:
         time.sleep(config.ACTION_DELAY)
         myElem = WebDriverWait(self.driver, config.WEB_DRIVER_WAIT).until(EC.presence_of_element_located(element))
         return myElem
-        
-    
-    def checkout_info(self, PRODUCT, ENGRAVING_TEXT,PRICE):
-        product = self.get_element(PRODUCT).text        
-        engraving =self.get_element(ENGRAVING_TEXT).text
-        price = self.get_element(PRICE).text
-        return {
-                'product': product,
-                'engraving': engraving.lower(),
-                'price':price
-        }
-    def cart_info(self, PRODUCT, PRICE, text):
-        product = self.get_element(PRODUCT).text.split('\n')[0]      
-        engraving = text
-        price =  self.get_element(PRICE).text
-
-        return {
-                'product': product,
-                'engraving': engraving.lower(),
-                'price':price
-        }

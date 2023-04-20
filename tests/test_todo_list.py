@@ -7,7 +7,7 @@ from helpers import helpers
 # from locator.rb_pdp_locator import *
 # from locator.rb_checkout_page_locator import *
 
-class ToDoListTesting(BaseClass): # testsuite
+class TestToDoList(BaseClass): # testsuite
     
     # TODO1 = "TODO1"
     # TODO2 = "TODO2"
@@ -18,7 +18,7 @@ class ToDoListTesting(BaseClass): # testsuite
     def test_1_add_new_todo_item(self):
 
         ''' This is a test case to test the add new todo item action. '''
-        #Instantiating the logger
+        # Instantiating the logger
         self.log().info("Todo List - Add New To Do")
         # Opening ToDo Url
         self.driver.get('https://todomvc.com/examples/vanilla-es6')

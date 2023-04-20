@@ -33,11 +33,11 @@ def setup(request):
             chrome_options.add_argument('--headless')
         #Instantiating the driver with the options
         print("====================",config.DRIVER_PATH)
-        driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}\chromedriver.exe",  options=chrome_options)
+        driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}/chromedriver.exe",  options=chrome_options)
         # driver.accept_next_alert = True
         # self.verificationErrors = []
     elif browser_name == "firefox":
-        driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}\geckodriver.exe")
+        driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}/geckodriver.exe")
     elif browser_name == "IE":
         print("IE driver")
     #opening the driver and maximizing the window

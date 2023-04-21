@@ -1,17 +1,16 @@
 from tests import BaseClass
 from selenium.webdriver.common.keys import Keys
+
 import time
 from locator.todo_homepage_locator import *
 from helpers import helpers
-# from locator.rb_plp_locator import *
-# from locator.rb_pdp_locator import *
-# from locator.rb_checkout_page_locator import *
+from selenium.webdriver.common.action_chains import ActionChains
 
 class TestToDoList(BaseClass): # testsuite
     
 
     TODOS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test']
-    
+
  
     def test_1_add_new_todo_item(self):
 
@@ -43,20 +42,32 @@ class TestToDoList(BaseClass): # testsuite
 
     def test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
         # get the first ID of the To Do list items
+         global select_id
          select_id = helpers.get_list_of_all_ids(self)[0]
+
+     #     checkbox_to_complete = helpers.select_id(self,1)
+
         # Pass the selected ID to the selector function, this will ensure that the checkbox  checked is always the one that is set on select_id
          checkbox_to_complete = checkbox(select_id)
           # Logger instantianting 
-         self.log().info("To Do list - Complete task")
+         self.log().info("To Do list - All task")
           # click on checkbox to complete
          self.get_element(checkbox_to_complete).click()
-          # get lists of active, completed items, and also the left items information.
+         
+         # set the initial point, these lists will be used to compare with the list of each tab (active, completed, all).
+         global active_ids_from_all_tab
+         active_ids_from_all_tab = helpers.get_list_of_active_ids(self)
+         global completed_ids_from_all_tab
          completed_ids_from_all_tab= helpers.get_list_of_completed_ids(self)
-         active_ids_form_completed_tab = helpers.get_list_of_active_ids(self)
          left_items_value = helpers.get_item_left(self)
           # assert there is only 1 item marked as checked, and that this item is the one that meant to be, and test if the left items value changed accordingly when the checkbox was completed.
-         assert len(completed_ids_from_all_tab) == 1 and select_id in completed_ids_from_all_tab and  len(active_ids_form_completed_tab) == left_items_value
+         assert len(completed_ids_from_all_tab) == 1 and select_id in completed_ids_from_all_tab and  len(active_ids_from_all_tab) == left_items_value
           # Ensure the completed item is presented on COMPLETED tab.
+         self.log().info("To Do list - All tab - PASS")
+         
+    def test_4_completed_tab(self):
+         self.log().info("To Do list - Completed task tab")
+         
          self.get_element(COMPLETE_BTN).click()
          all_ids_from_completed_tab = helpers.get_list_of_all_ids(self) 
          assert len(all_ids_from_completed_tab) == 1 and all_ids_from_completed_tab == completed_ids_from_all_tab and select_id in all_ids_from_completed_tab
@@ -64,30 +75,46 @@ class TestToDoList(BaseClass): # testsuite
          self.log().info("To Do list - Completed task tab - PASS")
 
 
-    def test_4_active_tab(self):
+    def test_5_active_tab(self):
           self.log().info("To Do list - Active tab test")
           self.get_element(ACTIVE_BTN).click()
-
-
-    #     self.get_element(CUSTOM_ENGRAVING).click()
-    #     self.get_element(ENGRAVING_INPUT).send_keys(self.ENGRAVING_TEXT)
-    #     self.get_element(SAVE_ENGRAVING).click()
-    #     self.get_element(ADD_TO_CART).click()
-    #     engraving_cart = self.get_element(CART_ENGRAVING_INFO).text
-    #     assert self.ENGRAVING_TEXT.lower() in engraving_cart.lower()
+          active_list = helpers.get_list_of_all_ids(self)
+          active_set = set(active_list)
+          active_ids_set = set(active_ids_from_all_tab)
+          assert active_set == active_ids_set
+          # assert active_list  in  active_ids_from_all_tab
           self.log().info("To Do list - Active tab test")
 
+    def test_6_delete_todo(self):
+          actions = ActionChains(self.driver)
+          self.log().info("To Do list - Detele To Do button test")
+          id_selection = helpers.get_list_of_active_ids(self)[1]
+          element = self.get_element(element_id(id_selection))
+
+          # Passe o mouse sobre o elemento
+          actions.move_to_element(element).perform()
+
+          # Localize e clique no botão "destroy"
+          btn_delete = element.find_element(*DELETE_BTN)
+          btn_delete.click()
+          assert id_selection  not in helpers.get_list_of_active_ids(self)
+          
+          self.log().info("To Do list - Delete To Do button test")
 
 
-    # def test_5_go_checkout(self):
-    #     self.log().info("Reserver Bar - Go to Checkout started")
-    #     cart_info = self.cart_info(CART_PRODUCT,CART_PRICE,self.ENGRAVING_TEXT)
-    #     self.get_element(CHECKOUT_BTN).click()
-    #     checkout_info = self.checkout_info(CKT_PRODUCT,CKT_ENGRAVING_TEXT,CKT_PRICE)
-    #     assert checkout_info == cart_info
-    #     self.log().info("Reserver Bar - Go to Checkout >> PASS <<")
-    #     self.log().info(checkout_info)
-    #     self.log().info(cart_info)
+    def test_7_clear_completed_btn(self):
+          self.log().info("To Do list -Clear Completed Test")
+          btn_all = self.get_element(ALL_BTN)
+          btn_all.click()
+          self.get_element(CLEAR_COMPLETED).click()
+          all_tab_completed_id = helpers.get_list_of_completed_ids(self)
+          self.get_element(COMPLETE_BTN).click()
+          completed_tab_ids = helpers.get_list_of_all_ids(self)
+
+          assert len(all_tab_completed_id) == 0 and len(completed_tab_ids) == 0
+          time.sleep(3)
+
+
 
 
 

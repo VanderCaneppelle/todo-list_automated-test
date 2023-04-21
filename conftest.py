@@ -7,6 +7,8 @@ from datetime import datetime
 from pathlib import Path
 import os
 
+
+
 def pytest_addoption(parser):
     ''' This function adds a argument to choose the broweser '''
     parser.addoption(

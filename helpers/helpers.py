@@ -7,7 +7,7 @@ TODO_IDS = (By.TAG_NAME,'li')
 TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
 
 
-# get all the to do task names and return in a list
+# get all the to do task NAME and return in a list
 def get_todo_items_list(self): 
     todo_items = []
     items = self.driver.find_elements(*TODO_LIST_ITEMS)
@@ -55,3 +55,7 @@ def get_list_of_active_ids(self):
         active_ids.append(id)
     
     return active_ids
+
+
+
+

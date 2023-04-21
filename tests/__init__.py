@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 import config, pytest, time
 
+
 @pytest.mark.usefixtures("setup")
 class BaseClass:
     def log(self):

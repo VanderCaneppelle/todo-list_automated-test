@@ -11,7 +11,7 @@ DOWNLOAD_WAIT_TIME = 30
 DOWNLOAD_FOLDER = os.path.join(BASE_DIRECTORY,'src', 'media','download')
 
 #Reporting
-REPORT_TITLE = "Orange HRM Testing"
+REPORT_TITLE = "To Do list Testing"
 REPORT_FOLDER = os.path.join(BASE_DIRECTORY, 'src', 'reports')
 INDIVIDUAL_REPORT = False
 LOG_FOLDER = os.path.join(BASE_DIRECTORY, 'src', 'logs')

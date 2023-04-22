@@ -2564,3 +2564,79 @@
 2023-04-22 11:28:06,872 :INFO : test_5_active_tab :To Do list - Active tab test
 2023-04-22 11:28:07,041 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
 2023-04-22 11:28:07,155 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test
+2023-04-22 11:30:13,902 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 11:30:14,062 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:30:14,062 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:30:14,072 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:30:14,072 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:30:14,072 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:30:14,096 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 11:30:14,166 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:30:14,166 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:30:14,172 :INFO : test_4_completed_tab :To Do list - Completed task tab
+2023-04-22 11:30:14,216 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:30:14,216 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:30:14,222 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:30:14,274 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:30:14,274 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:30:14,281 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 11:30:14,621 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:30:14,621 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:30:14,626 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test
+2023-04-22 11:34:37,885 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 11:34:38,062 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:34:38,062 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:34:38,066 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:38,066 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:38,066 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:38,092 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 11:34:38,162 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:34:38,162 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:34:38,172 :INFO : test_4_completed_tab :To Do list - Completed task tab
+2023-04-22 11:34:38,215 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:34:38,215 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:34:38,220 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:34:38,267 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:34:38,267 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:34:38,273 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 11:34:38,612 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:34:38,612 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:34:38,617 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test
+2023-04-22 11:34:54,402 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 11:34:57,573 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:34:57,573 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:34:57,582 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:57,582 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:57,582 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:34:57,609 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 11:34:58,685 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:34:58,685 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:34:58,689 :INFO : test_4_completed_tab :To Do list - Completed task tab
+2023-04-22 11:34:59,738 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:34:59,738 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:34:59,745 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:00,790 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:00,790 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:00,796 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 11:35:02,130 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:35:02,130 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:35:02,135 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test
+2023-04-22 11:35:25,778 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 11:35:29,962 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:35:29,962 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 11:35:29,971 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:35:29,971 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:35:29,971 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 11:35:29,996 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 11:35:31,063 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:35:31,063 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 11:35:31,073 :INFO : test_4_completed_tab :To Do list - Completed task tab
+2023-04-22 11:35:32,115 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:35:32,115 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 11:35:32,120 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:33,171 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:33,171 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 11:35:33,176 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 11:35:34,517 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:35:34,517 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 11:35:34,523 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test

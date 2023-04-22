@@ -9,14 +9,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 class TestToDoList(BaseClass): # testsuite
     
 
-     TODOS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test']
+     TODOS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test', 'onemore']
  
      def test_1_add_new_todo_item(self):
           self.log().info("Todo List - Add New To Do / Items Left ")   # Instantiating the logger
           
           add_new_todo_items(self,*self.TODOS)    # add a new todo item
           assert get_todo_items_list(self) == self.TODOS       # Ensure the list of TO DO items matches with the items entered.          
-          assert items_left(self) == len(list_of_active_ids(self))
+          assert items_left(self) == len(list_of_active_ids(self)) # Ensure the items left information matches with the qty of active items.
        
           self.log().info("Todo List - Add New To Do - PASS")
           self.log().info("Todo List - Items Left - PASS ")

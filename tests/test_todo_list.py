@@ -1,4 +1,4 @@
-from tests import BaseClass
+from base_class import BaseClass
 from selenium.webdriver.common.keys import Keys
 
 import time

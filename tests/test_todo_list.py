@@ -17,7 +17,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           
           self.add_new_todo_items(NEW_TODO_LOCATOR,*self.NEW_ITEMS)                        # add a new todo item
           assert self.all_todo_items_list(TODO_LIST_ITEMS) == self.NEW_ITEMS               # Ensure the list of TO DO items matches with the items entered.          
-          assert self.items_left(TODO_COUNT) == len(self.list_of_all_ids(TODO_LIST_ITEMS)) # Ensure the items left information matches with the qty of active items.
+          assert self.items_left(TODO_COUNT) == len(self.list_of_all_ids(TODO_LIST_ITEMS,ALL_BTN)) # Ensure the items left information matches with the qty of active items.
        
           self.log().info("Todo List - Add New To Do - PASS")
           self.log().info("Todo List - Items Left - PASS ")
@@ -25,7 +25,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
      
      def test_2_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
           # get the first ID of the To Do list items, for later use this ID to mark as complete.
-          select_id = self.list_of_all_ids(TODO_LIST_ITEMS)[0]
+          select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]
           # Pass the selected ID to the selector function, this will ensure that the checkbox  checked is always the one that is set on select_id
           checkbox_locator = self.insert_id_into_selector(select_id)
           # click on checkbox to complete
@@ -42,28 +42,34 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
          
      def test_3_completed_tab(self):
          #
-         select_id = self.list_of_all_ids(TODO_LIST_ITEMS)[0]
+         select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]
          completed_id_list = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
          
          self.get_element(COMPLETE_BTN).click()
-         all_ids_from_completed_tab = self.list_of_all_ids(TODO_LIST_ITEMS) 
+         all_ids_from_completed_tab = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS) 
          
          assert len(all_ids_from_completed_tab) == 1 
          assert all_ids_from_completed_tab == [select_id] 
          assert select_id in completed_id_list
          
           
-     '''
-     def test_5_active_tab(self):
-          self.log().info("To Do list - Active tab test")
-          self.get_element(ACTIVE_BTN).click()
-          active_list = get_list_of_all_ids(self)
-          active_set = set(active_list)
-          active_ids_set = set(active_ids_from_all_tab)
-          assert active_set == active_ids_set
-          # assert active_list  in  active_ids_from_all_tab
-          self.log().info("To Do list - Active tab test")
+     def test_4_active_tab(self):
+          self.get_element(ALL_BTN).click()
 
+          active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
+
+          self.get_element(ACTIVE_BTN).click()
+          active_list = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
+
+          active_list_set = set(active_list)
+          active_ids_from_all_tab_set = set(active_ids_from_all_tab)
+
+          
+
+          assert active_ids_from_all_tab_set == active_list_set
+         
+
+     '''
      def test_6_delete_todo(self):
           actions = ActionChains(self.driver)
           self.log().info("To Do list - Detele To Do button test")

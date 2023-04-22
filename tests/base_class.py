@@ -63,9 +63,20 @@ class BaseClass:
             return int(qty)
 
 
-        # get a list of all IDS in a tab
-        def list_of_all_ids(self,TODO_LIST_ITEMS):
+        # get a list of all IDS in ALL tab
+        def list_of_all_ids(self,TODO_LIST_ITEMS, BTN_TO_CLICK):
             id_list = []
+            self.get_element(BTN_TO_CLICK).click()
+            ids = self.driver.find_elements(*TODO_LIST_ITEMS)
+            for id in ids:
+                value = id.get_attribute("data-id")
+                id_list.append(value)
+
+            return id_list
+        
+        def list_of_all_ids_current_tab(self,TODO_LIST_ITEMS):
+            id_list = []
+        
             ids = self.driver.find_elements(*TODO_LIST_ITEMS)
             for id in ids:
                 value = id.get_attribute("data-id")
@@ -86,7 +97,7 @@ class BaseClass:
 
         def list_of_active_ids_current_tab(self,TODO_COMPLETED_IDS,TODO_LIST_ITEMS):
             active_ids = []
-            all_ids = self.list_of_all_ids(TODO_LIST_ITEMS)
+            all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
             completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
 
             for id in set(all_ids) - set(completed_ids):

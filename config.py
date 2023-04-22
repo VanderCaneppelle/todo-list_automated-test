@@ -6,7 +6,7 @@ BASE_URL ="https://todomvc.com/examples/vanilla-es6"
 DRIVER_PATH = os.path.join(BASE_DIRECTORY, 'src', 'drivers') #use os.path.join to create a path
 WEB_DRIVER_WAIT = 30
 HEADLESS = False
-ACTION_DELAY = 1
+ACTION_DELAY = 0
 DOWNLOAD_WAIT_TIME = 30
 DOWNLOAD_FOLDER = os.path.join(BASE_DIRECTORY,'src', 'media','download')
 

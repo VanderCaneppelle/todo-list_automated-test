@@ -75,7 +75,7 @@ class BaseClass:
 
 
         # get a list of all completed ids in a tab
-        def get_list_of_completed_ids(self,TODO_COMPLETED_IDS):
+        def list_of_completed_ids_current_tab(self,TODO_COMPLETED_IDS):
             completed_id_list = []
             completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
             for id in completed_ids:
@@ -84,12 +84,17 @@ class BaseClass:
 
             return completed_id_list
 
-        def list_of_active_ids(self,TODO_COMPLETED_IDS,TODO_LIST_ITEMS):
+        def list_of_active_ids_current_tab(self,TODO_COMPLETED_IDS,TODO_LIST_ITEMS):
             active_ids = []
             all_ids = self.list_of_all_ids(TODO_LIST_ITEMS)
-            completed_ids = self.get_list_of_completed_ids(TODO_COMPLETED_IDS)
+            completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
 
             for id in set(all_ids) - set(completed_ids):
                 active_ids.append(id)
             
             return active_ids
+        
+        def insert_id_into_selector(self,id):
+            CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
+
+            return CHECKBOX

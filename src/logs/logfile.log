@@ -2757,3 +2757,56 @@
 2023-04-22 13:25:36,119 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
 2023-04-22 13:25:36,119 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
 2023-04-22 13:25:36,119 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:52:44,445 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:52:48,641 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:52:48,641 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:52:48,644 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:52:48,644 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:52:48,644 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:53:50,001 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:53:54,207 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:53:54,207 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:53:54,211 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:53:54,211 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:53:54,211 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:55:41,139 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:55:45,326 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:55:45,326 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:55:45,329 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:55:45,329 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:55:45,329 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:55:45,356 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 13:56:39,638 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:56:43,823 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:56:43,823 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:56:43,827 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:56:43,827 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:56:43,827 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:56:43,852 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 13:56:44,931 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 13:56:44,931 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 13:56:56,496 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:57:00,687 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:57:00,687 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:57:00,691 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:57:00,691 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:57:00,691 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:57:00,719 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 13:57:01,802 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 13:57:01,802 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 13:59:24,095 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 13:59:28,279 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:59:28,279 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 13:59:28,284 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:59:28,284 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:59:28,284 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 13:59:28,313 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 13:59:29,391 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 13:59:29,391 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 14:01:44,532 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 14:01:48,716 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 14:01:48,716 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 14:01:48,719 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 14:01:48,719 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 14:01:48,719 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 14:01:48,748 :INFO : test_2_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task

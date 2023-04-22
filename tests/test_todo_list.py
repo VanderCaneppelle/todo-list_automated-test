@@ -20,30 +20,26 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           self.log().info("Todo List - Add New To Do - PASS")
           self.log().info("Todo List - Items Left - PASS ")
 
-     '''
-     def test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
-        # get the first ID of the To Do list items
-         global select_id
-         select_id = get_list_of_all_ids(self)[0]
-
+     
+     def test_2_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
+        # get the first ID of the To Do list items, for later use this ID to mark as complete.
+          self.select_id = self.list_of_all_ids(TODO_LIST_ITEMS)[0]
         # Pass the selected ID to the selector function, this will ensure that the checkbox  checked is always the one that is set on select_id
-         checkbox_to_complete = checkbox(select_id)
+          checkbox_locator = self.insert_id_into_selector(self.select_id)
           # Logger instantianting 
-         self.log().info("To Do list - All task")
+          self.log().info("To Do list - All task")
           # click on checkbox to complete
-         self.get_element(checkbox_to_complete).click()
-         
-         # set the initial point, these lists will be used to compare with the list of each tab (active, completed, all).
-         global active_ids_from_all_tab
-         active_ids_from_all_tab = list_of_active_ids(self)
-         global completed_ids_from_all_tab
-         completed_ids_from_all_tab= get_list_of_completed_ids(self)
-         left_items_value = items_left(self)
+          self.get_element(checkbox_locator).click()
+          self.active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
+          self.completed_ids_from_all_tab= self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
+          left_items_value = self.items_left(TODO_COUNT)
           # assert there is only 1 item marked as checked, and that this item is the one that meant to be, and test if the left items value changed accordingly when the checkbox was completed.
-         assert len(completed_ids_from_all_tab) == 1 and select_id in completed_ids_from_all_tab and  len(active_ids_from_all_tab) == left_items_value
+          assert len(self.completed_ids_from_all_tab) == 1 
+          assert self.select_id in self.completed_ids_from_all_tab 
+          assert len(self.active_ids_from_all_tab) == left_items_value
           # Ensure the completed item is presented on COMPLETED tab.
-         self.log().info("To Do list - All tab - PASS")
-         
+          self.log().info("To Do list - All tab - PASS")
+     '''    
      def test_4_completed_tab(self):
          self.log().info("To Do list - Completed task tab")
          

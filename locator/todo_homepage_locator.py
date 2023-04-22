@@ -19,10 +19,10 @@ def element_id(id):
     return DELETE
 
 
-def checkbox(id):
-    CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
+# def insert_id_into_selector(id):
+#     CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
 
-    return CHECKBOX
+#     return CHECKBOX
 
 
 def item_to_delete(id):

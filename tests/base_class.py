@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 
 @pytest.mark.usefixtures("setup")
 class BaseClass:
-
+    
     def log(self):
         loggerName = inspect.stack()[1][3]
         logger = logging.getLogger(loggerName)
@@ -39,7 +39,7 @@ class BaseClass:
         return myElem
 
     class ToDoList:
-        
+     
         def add_new_todo_items(self,element,*items):
             for item in items:
                 self.get_element(element).send_keys(item,Keys.RETURN)
@@ -105,7 +105,13 @@ class BaseClass:
             
             return active_ids
         
-        def insert_id_into_selector(self,id):
+        def insert_id_into_checkbox_selector(self,id):
             CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
 
             return CHECKBOX
+        
+        def insert_id_into_delete_btn_selector(self,id):
+            DELETE = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
+    
+            return DELETE
+

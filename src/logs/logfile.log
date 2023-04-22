@@ -2989,3 +2989,72 @@
 2023-04-22 16:55:34,427 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
 2023-04-22 16:55:34,427 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
 2023-04-22 16:55:34,427 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:03:42,544 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:03:42,778 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:03:42,778 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:03:42,782 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:03:42,782 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:03:42,782 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:02,872 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:10:03,100 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:10:03,100 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:10:03,105 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:03,105 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:03,105 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:03,391 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 17:10:54,427 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:10:54,702 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:10:54,702 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:10:54,710 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:54,710 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:54,710 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:10:55,047 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 17:11:45,003 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:11:46,719 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:11:46,719 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:11:46,790 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:11:46,790 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:11:46,790 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:11:48,019 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 17:16:46,861 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:16:47,108 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:16:47,108 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:16:47,113 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:16:47,113 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:16:47,113 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:20:54,797 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:20:55,027 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:20:55,027 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:20:55,031 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:20:55,031 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:20:55,031 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:22:19,250 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:22:19,507 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:22:19,507 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:22:19,512 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:22:19,512 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:22:19,512 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:23:15,626 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:23:15,866 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:23:15,866 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:23:15,870 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:23:15,870 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:23:15,870 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:26:36,901 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:26:42,152 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:26:42,152 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:26:42,156 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:26:42,156 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:26:42,156 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:27:11,940 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:27:17,175 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:27:17,175 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:27:17,179 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:27:17,179 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:27:17,179 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:28:22,463 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 17:28:27,693 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:28:27,693 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 17:28:27,697 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:28:27,697 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 17:28:27,697 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 

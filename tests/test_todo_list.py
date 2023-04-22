@@ -27,7 +27,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           # get the first ID of the To Do list items, for later use this ID to mark as complete.
           select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]
           # Pass the selected ID to the selector function, this will ensure that the checkbox  checked is always the one that is set on select_id
-          checkbox_locator = self.insert_id_into_selector(select_id)
+          checkbox_locator = self.insert_id_into_checkbox_selector(select_id)
           # click on checkbox to complete
           self.get_element(checkbox_locator).click()
           active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
@@ -64,17 +64,13 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           active_list_set = set(active_list)
           active_ids_from_all_tab_set = set(active_ids_from_all_tab)
 
-          
-
           assert active_ids_from_all_tab_set == active_list_set
          
 
-     '''
      def test_6_delete_todo(self):
           actions = ActionChains(self.driver)
-          self.log().info("To Do list - Detele To Do button test")
-          id_selection = list_of_active_ids(self)[1]
-          element = self.get_element(element_id(id_selection))
+          id_selection = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[1]
+          element = self.get_element(self.insert_id_into_delete_btn_selector(id_selection))
 
           # Passe o mouse sobre o elemento
           actions.move_to_element(element).perform()
@@ -82,11 +78,11 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           # Localize e clique no botão "destroy"
           btn_delete = element.find_element(*DELETE_BTN)
           btn_delete.click()
-          assert id_selection  not in list_of_active_ids(self)
+          assert id_selection  not in self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
+          self.get_element(ACTIVE_BTN).click()
+          assert id_selection not in self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
           
-          self.log().info("To Do list - Delete To Do button test")
-
-
+     '''
      def test_7_clear_completed_btn(self):
           self.log().info("To Do list -Clear Completed Test")
           btn_all = self.get_element(ALL_BTN)

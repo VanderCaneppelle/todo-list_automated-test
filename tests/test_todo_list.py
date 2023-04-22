@@ -83,7 +83,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           assert id_selection not in self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
           
      
-     def test_7_clear_completed_btn(self):
+     def test_6_clear_completed_btn(self):
           btn_all = self.get_element(ALL_BTN)
           btn_all.click()
           self.get_element(CLEAR_COMPLETED).click()

@@ -1,10 +1,10 @@
-from base_class import BaseClass
 from selenium.webdriver.common.keys import Keys
 
 import time
 from locator.todo_homepage_locator import *
 from helpers.helpers import *
 from selenium.webdriver.common.action_chains import ActionChains
+from tests.base_class import BaseClass
 
 class TestToDoList(BaseClass): # testsuite
     

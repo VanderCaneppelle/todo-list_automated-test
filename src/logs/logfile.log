@@ -2659,3 +2659,22 @@
 2023-04-22 11:45:42,241 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
 2023-04-22 11:45:42,241 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
 2023-04-22 11:45:42,246 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test
+2023-04-22 12:01:13,160 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do / Items Left 
+2023-04-22 12:01:17,352 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 12:01:17,352 :INFO : test_1_add_new_todo_item :Todo List - Add New To Do - PASS
+2023-04-22 12:01:17,360 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 12:01:17,360 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 12:01:17,360 :INFO : test_1_add_new_todo_item :Todo List - Items Left - PASS 
+2023-04-22 12:01:17,382 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All task
+2023-04-22 12:01:18,461 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 12:01:18,461 :INFO : test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab :To Do list - All tab - PASS
+2023-04-22 12:01:18,465 :INFO : test_4_completed_tab :To Do list - Completed task tab
+2023-04-22 12:01:19,512 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 12:01:19,512 :INFO : test_4_completed_tab :To Do list - Completed task tab - PASS
+2023-04-22 12:01:19,516 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 12:01:20,569 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 12:01:20,569 :INFO : test_5_active_tab :To Do list - Active tab test
+2023-04-22 12:01:20,574 :INFO : test_6_delete_todo :To Do list - Detele To Do button test
+2023-04-22 12:01:21,927 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 12:01:21,927 :INFO : test_6_delete_todo :To Do list - Delete To Do button test
+2023-04-22 12:01:21,932 :INFO : test_7_clear_completed_btn :To Do list -Clear Completed Test

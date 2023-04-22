@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>To Do list Testing</h1>
-    <p>Report generated on 22-Apr-2023 at 11:57:15 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 22-Apr-2023 at 12:01:27 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.2</td></tr></table>
     <h2>Summary</h2>
-    <p>0 tests ran in 0.13 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">1 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>6 tests ran in 16.72 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -468,13 +468,70 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="5">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="error results-table-row">
+      <tbody class="passed results-table-row">
         <tr>
-          <td class="col-result">Error</td>
-          <td class="col-name">tests/test_todo_list.py::collect</td>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_1_add_new_todo_item</td>
           <td>report.description</td>
-          <td class="col-time">2023-04-22 14:57:15.744393</td>
-          <td class="col-duration"></td></tr>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">6.88</td></tr>
         <tr class="collapsed">
           <td class="extra" colspan="5">
-            <div class="log">ImportError while importing test module &#x27;C:\Users\vande\repos\todo-list-automated_tests\tests\test_todo_list.py&#x27;.<br/>Hint: make sure your test modules/packages have valid Python names.<br/>Traceback:<br/>..\..\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module<br/>    return _bootstrap._gcd_import(name[level:], package, level)<br/>tests\test_todo_list.py:1: in &lt;module&gt;<br/>    from base_class import BaseClass<br/><span class="error">E   ModuleNotFoundError: No module named &#x27;base_class&#x27;</span><br/></div></td></tr></tbody></table></body></html>
+            <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>==================== C:\Users\vande\repos\todo-list-automated_tests\src\drivers
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     test_1_add_new_todo_item:test_todo_list.py:15 Todo List - Add New To Do / Items Left 
+INFO     test_1_add_new_todo_item:test_todo_list.py:21 Todo List - Add New To Do - PASS
+INFO     test_1_add_new_todo_item:test_todo_list.py:22 Todo List - Items Left - PASS<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">1.10</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab:test_todo_list.py:33 To Do list - All task
+INFO     test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab:test_todo_list.py:46 To Do list - All tab - PASS<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_4_completed_tab</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">1.04</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_4_completed_tab:test_todo_list.py:49 To Do list - Completed task tab
+INFO     test_4_completed_tab:test_todo_list.py:55 To Do list - Completed task tab - PASS<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_5_active_tab</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">1.05</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_5_active_tab:test_todo_list.py:59 To Do list - Active tab test
+INFO     test_5_active_tab:test_todo_list.py:66 To Do list - Active tab test<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_6_delete_todo</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">1.35</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_6_delete_todo:test_todo_list.py:70 To Do list - Detele To Do button test
+INFO     test_6_delete_todo:test_todo_list.py:82 To Do list - Delete To Do button test<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_7_clear_completed_btn</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-22 15:01:27.161431</td>
+          <td class="col-duration">5.23</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="log"> -------------------------------Captured log call-------------------------------- <br/>INFO     test_7_clear_completed_btn:test_todo_list.py:86 To Do list -Clear Completed Test<br/></div></td></tr></tbody></table></body></html>

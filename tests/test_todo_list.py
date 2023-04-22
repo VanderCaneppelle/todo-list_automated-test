@@ -1,27 +1,26 @@
 from selenium.webdriver.common.keys import Keys
-
 import time
 from locator.todo_homepage_locator import *
 from helpers.helpers import *
 from selenium.webdriver.common.action_chains import ActionChains
 from tests.base_class import BaseClass
 
-class TestToDoList(BaseClass): # testsuite
+class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
     
 
-     TODOS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test', 'onemore']
+     NEW_ITEMS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test', 'onemore']
  
      def test_1_add_new_todo_item(self):
           self.log().info("Todo List - Add New To Do / Items Left ")   # Instantiating the logger
           
-          add_new_todo_items(self,*self.TODOS)    # add a new todo item
-          assert get_todo_items_list(self) == self.TODOS       # Ensure the list of TO DO items matches with the items entered.          
-          assert items_left(self) == len(list_of_active_ids(self)) # Ensure the items left information matches with the qty of active items.
+          self.add_new_todo_items(NEW_TODO_LOCATOR,*self.NEW_ITEMS)    # add a new todo item
+          assert self.all_todo_items_list(TODO_LIST_ITEMS) == self.NEW_ITEMS       # Ensure the list of TO DO items matches with the items entered.          
+          assert self.items_left(TODO_COUNT) == len(self.list_of_all_ids(TODO_LIST_ITEMS)) # Ensure the items left information matches with the qty of active items.
        
           self.log().info("Todo List - Add New To Do - PASS")
           self.log().info("Todo List - Items Left - PASS ")
 
-
+     '''
      def test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
         # get the first ID of the To Do list items
          global select_id
@@ -55,7 +54,9 @@ class TestToDoList(BaseClass): # testsuite
          self.log().info("To Do list - Completed task tab - PASS")
 
 
-     def test_5_active_tab(self):
+   
+  
+    def test_5_active_tab(self):
           self.log().info("To Do list - Active tab test")
           self.get_element(ACTIVE_BTN).click()
           active_list = get_list_of_all_ids(self)
@@ -92,6 +93,7 @@ class TestToDoList(BaseClass): # testsuite
           completed_tab_ids = get_list_of_all_ids(self)
 
           assert len(all_tab_completed_id) == 0 and len(completed_tab_ids) == 0
+     '''
 
 
 

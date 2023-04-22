@@ -1,13 +1,17 @@
 from selenium.webdriver.common.by import By
 
 # locators
-NEW_TODO = (By.CLASS_NAME, 'new-todo')
+NEW_TODO_LOCATOR = (By.CLASS_NAME, 'new-todo')
 COMPLETE_BTN = (By.CSS_SELECTOR, 'a[href="#/completed"]')
 ACTIVE_BTN = (By.CSS_SELECTOR, 'a[href="#/active"]')
 DELETE_BTN = (By.CSS_SELECTOR,"button.destroy")
-ELEMENT = (By.CSS_SELECTOR, "li[data-id='1682082599179']")
 ALL_BTN =  (By.CSS_SELECTOR, 'a[href="#/"]')
 CLEAR_COMPLETED = (By.CSS_SELECTOR, "button.clear-completed")
+TODO_COUNT =(By.XPATH,'//span[@class="todo-count"]')
+TODO_LIST = (By.CLASS_NAME, 'todo-list')
+TODO_LIST_ITEMS =(By.CSS_SELECTOR,'[data-id]')
+TODO_IDS = (By.TAG_NAME,'li')
+TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
 
 def element_id(id):
     DELETE = (By.CSS_SELECTOR, f'li[data-id="{id}"]')

@@ -105,12 +105,12 @@ class BaseClass:
             
             return active_ids
         
-        def insert_id_into_checkbox_selector(self,id):
+        def selector_with_selected_id_chk(self,id):
             CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
 
             return CHECKBOX
         
-        def insert_id_into_delete_btn_selector(self,id):
+        def selector_with_selected_id_del(self,id):
             DELETE = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
     
             return DELETE

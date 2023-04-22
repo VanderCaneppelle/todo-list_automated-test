@@ -1,7 +1,7 @@
 from selenium.webdriver.common.keys import Keys
 import time
 from locator.todo_homepage_locator import *
-from helpers.helpers import *
+#from helpers.helpers import *
 from selenium.webdriver.common.action_chains import ActionChains
 from tests.base_class import BaseClass
 
@@ -27,7 +27,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           # get the first ID of the To Do list items, for later use this ID to mark as complete.
           select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]
           # Pass the selected ID to the selector function, this will ensure that the checkbox  checked is always the one that is set on select_id
-          checkbox_locator = self.insert_id_into_checkbox_selector(select_id)
+          checkbox_locator = self.selector_with_selected_id_chk(select_id)
           # click on checkbox to complete
           self.get_element(checkbox_locator).click()
           active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
@@ -67,10 +67,10 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           assert active_ids_from_all_tab_set == active_list_set
          
 
-     def test_6_delete_todo(self):
+     def test_5_delete_todo(self):
           actions = ActionChains(self.driver)
           id_selection = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[1]
-          element = self.get_element(self.insert_id_into_delete_btn_selector(id_selection))
+          element = self.get_element(self.selector_with_selected_id_del(id_selection))
 
           # Passe o mouse sobre o elemento
           actions.move_to_element(element).perform()
@@ -82,18 +82,18 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           self.get_element(ACTIVE_BTN).click()
           assert id_selection not in self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)
           
-     '''
+     
      def test_7_clear_completed_btn(self):
-          self.log().info("To Do list -Clear Completed Test")
           btn_all = self.get_element(ALL_BTN)
           btn_all.click()
           self.get_element(CLEAR_COMPLETED).click()
-          all_tab_completed_id = get_list_of_completed_ids(self)
+          all_tab_completed_id = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
           self.get_element(COMPLETE_BTN).click()
-          completed_tab_ids = get_list_of_all_ids(self)
+          completed_tab_all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
 
-          assert len(all_tab_completed_id) == 0 and len(completed_tab_ids) == 0
-     '''
+          assert len(all_tab_completed_id) == 0 
+          assert len(completed_tab_all_ids) == 0
+     
 
 
 

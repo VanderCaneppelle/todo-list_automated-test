@@ -13,11 +13,6 @@ TODO_LIST_ITEMS =(By.CSS_SELECTOR,'[data-id]')
 TODO_IDS = (By.TAG_NAME,'li')
 TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
 
-def element_id(id):
-    DELETE = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
-    
-    return DELETE
-
 
 # def insert_id_into_selector(id):
 #     CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
@@ -25,6 +20,6 @@ def element_id(id):
 #     return CHECKBOX
 
 
-def item_to_delete(id):
-    delete =  (By.CSS_SELECTOR, f'li[data-id="{id}"] button.destroy')
-    return delete
+# def item_to_delete(id):
+#     delete =  (By.CSS_SELECTOR, f'li[data-id="{id}"] button.destroy')
+#     return delete

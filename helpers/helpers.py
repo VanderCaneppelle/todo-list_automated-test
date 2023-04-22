@@ -1,10 +1,18 @@
 
+from typing import KeysView
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+NEW_TODO = (By.CLASS_NAME, 'new-todo')
 TODO_LIST = (By.CLASS_NAME, 'todo-list')
 TODO_LIST_ITEMS =(By.CSS_SELECTOR,'[data-id]')
 TODO_COUNT =(By.XPATH,'//span[@class="todo-count"]')
 TODO_IDS = (By.TAG_NAME,'li')
 TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
+
+
+def add_new_todo_items(self,*items):
+    for item in items:
+        self.get_element(NEW_TODO).send_keys(item,Keys.RETURN)
 
 
 # get all the to do task NAME and return in a list

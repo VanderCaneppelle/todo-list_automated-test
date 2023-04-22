@@ -47,7 +47,7 @@ def setup(request):
     driver.maximize_window()
     request.cls.driver = driver
     yield
-    driver.close()
+    driver.quit()
 
 reports_dir = ''
 def create_report_folder():
@@ -92,25 +92,25 @@ def pytest_html_results_table_row(report, cells):
 
 @pytest.mark.hookwrapper
 def pytest_runtest_makereport(item):
-    """
-    Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
-    :param item:
-    """
-    pytest_html = item.config.pluginmanager.getplugin('html')
-    outcome = yield
-    report = outcome.get_result()
-    report.description = str(item.function.__doc__)
-    extra = getattr(report, 'extra', [])
-    if report.when == 'call' or report.when == "setup":
-        xfail = hasattr(report, 'wasxfail')
-        if (report.skipped and xfail) or (report.failed and not xfail):
-            file_name = report.nodeid.replace("::", "_") + ".png"
-            _capture_screenshot(file_name)
-            if file_name:
-                html = '<div><img src="%s" alt="screenshot" style="width:304px;height:228px;" ' \
-                       'onclick="window.open(this.src)" align="right"/></div>' % file_name
-                extra.append(pytest_html.extras.html(html))
-        report.extra = extra
+     """
+     Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
+     :param item:
+     """
+     pytest_html = item.config.pluginmanager.getplugin('html')
+     outcome = yield
+     report = outcome.get_result()
+     report.description = str(item.function.__doc__)
+     extra = getattr(report, 'extra', [])
+     if report.when == 'call' or report.when == "setup":
+         xfail = hasattr(report, 'wasxfail')
+         if (report.skipped and xfail) or (report.failed and not xfail):
+             file_name = report.nodeid.replace("::", "_") + ".png"
+             _capture_screenshot(file_name)
+             if file_name:
+                 html = '<div><img src="%s" alt="screenshot" style="width:304px;height:228px;" ' \
+                        'onclick="window.open(this.src)" align="right"/></div>' % file_name
+                 extra.append(pytest_html.extras.html(html))
+         report.extra = extra
 
 def _capture_screenshot(name):
     ''' Saves the captured screenshot to the report directory '''
@@ -126,5 +126,5 @@ def _capture_screenshot(name):
         print(e)
 
 def pytest_html_report_title(report):
-    ''' Adds title to the report '''
-    report.title = config.REPORT_TITLE
+     ''' Adds title to the report '''
+     report.title = config.REPORT_TITLE

@@ -32,6 +32,7 @@ six = "*"
 toml = "*"
 urllib3 = "*"
 zipp = "*"
+pylib = "*"
 
 [dev-packages]
 

@@ -27,7 +27,7 @@ def get_todo_items_list(self):
 
 
 # get the text that is presetend on the bottom, with the items left information.
-def get_item_left(self): 
+def items_left(self): 
     left = self.driver.find_element(*TODO_COUNT).text
     qty = left.split()[0]      
     return int(qty)
@@ -54,7 +54,7 @@ def get_list_of_completed_ids(self):
 
      return completed_id_list
 
-def get_list_of_active_ids(self):
+def list_of_active_ids(self):
     active_ids = []
     all_ids = get_list_of_all_ids(self)
     completed_ids = get_list_of_completed_ids(self)

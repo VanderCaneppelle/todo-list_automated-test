@@ -12,26 +12,14 @@ class TestToDoList(BaseClass): # testsuite
      TODOS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test']
  
      def test_1_add_new_todo_item(self):
-
-          ''' This is a test case to test the add new todo item action. '''
-          # Instantiating the logger
-          self.log().info("Todo List - Add New To Do")
-          # add a new todo item
-          add_new_todo_items(self,*self.TODOS)
-          # Ensure the list of TO DO items matches with the items entered.
-          assert get_todo_items_list(self) == self.TODOS
+          self.log().info("Todo List - Add New To Do / Items Left ")   # Instantiating the logger
+          
+          add_new_todo_items(self,*self.TODOS)    # add a new todo item
+          assert get_todo_items_list(self) == self.TODOS       # Ensure the list of TO DO items matches with the items entered.          
+          assert items_left(self) == len(list_of_active_ids(self))
+       
           self.log().info("Todo List - Add New To Do - PASS")
-
-
-     def test_2_items_left_all_tab(self):
-         
-         self.log().info("Todo List - Items Left ")
-         
-         items_left_text = get_item_left(self)
-         list_of_active_items = get_list_of_active_ids(self)
-         assert (len(list_of_active_items)) == items_left_text
-
-         self.log().info("Todo List - Items Left - PASS ")
+          self.log().info("Todo List - Items Left - PASS ")
 
 
      def test_3_mark_item_as_completed_on_all_tab_and_check_completed_tab(self):
@@ -48,10 +36,10 @@ class TestToDoList(BaseClass): # testsuite
          
          # set the initial point, these lists will be used to compare with the list of each tab (active, completed, all).
          global active_ids_from_all_tab
-         active_ids_from_all_tab = get_list_of_active_ids(self)
+         active_ids_from_all_tab = list_of_active_ids(self)
          global completed_ids_from_all_tab
          completed_ids_from_all_tab= get_list_of_completed_ids(self)
-         left_items_value = get_item_left(self)
+         left_items_value = items_left(self)
           # assert there is only 1 item marked as checked, and that this item is the one that meant to be, and test if the left items value changed accordingly when the checkbox was completed.
          assert len(completed_ids_from_all_tab) == 1 and select_id in completed_ids_from_all_tab and  len(active_ids_from_all_tab) == left_items_value
           # Ensure the completed item is presented on COMPLETED tab.
@@ -80,7 +68,7 @@ class TestToDoList(BaseClass): # testsuite
      def test_6_delete_todo(self):
           actions = ActionChains(self.driver)
           self.log().info("To Do list - Detele To Do button test")
-          id_selection = get_list_of_active_ids(self)[1]
+          id_selection = list_of_active_ids(self)[1]
           element = self.get_element(element_id(id_selection))
 
           # Passe o mouse sobre o elemento
@@ -89,7 +77,7 @@ class TestToDoList(BaseClass): # testsuite
           # Localize e clique no botão "destroy"
           btn_delete = element.find_element(*DELETE_BTN)
           btn_delete.click()
-          assert id_selection  not in get_list_of_active_ids(self)
+          assert id_selection  not in list_of_active_ids(self)
           
           self.log().info("To Do list - Delete To Do button test")
 

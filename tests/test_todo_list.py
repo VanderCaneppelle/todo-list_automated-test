@@ -9,7 +9,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
 
      NEW_ITEMS = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test']
  
-     def test_add_new_todo_item(self):
+     def test_1_add_new_todo_item(self):
           self.log().info("Todo List - Add New To Do / Items Left ")                             
           self.add_new_todo_items(NEW_TODO_LOCATOR,*self.NEW_ITEMS)                                           # Receive the locator and list of items and add to the To Do List
           assert self.todo_name_list(TODO_LIST_ITEMS) == self.NEW_ITEMS                                       # Ensure the list of TO DO text matches with the text entered.          
@@ -19,7 +19,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           self.log().info("Todo List - Items Left - PASS ")
 
      
-     def test_mark_item_as_completed_and_test_left_items(self):
+     def test_2_mark_item_as_completed_and_test_left_items(self):
           select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]  # Select an ID to be marked as completed, will be use to build the selector
           element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
           element.find_element(*CHECKBOX).click()                           # Click on the checkbox of the element selected.
@@ -34,7 +34,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
     
  
          
-     def test_completed_tab(self):
+     def test_3_completed_tab(self):
          
           select_id = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)          # get the completed IDS from ALL tab, to check if its the same on COMPLETED tab
           self.get_element(COMPLETE_BTN).click()                                          # click on COMPLETED button

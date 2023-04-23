@@ -28,7 +28,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           completed_ids_from_all_tab= self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)              # select only the COMPLETED IDs from ALL tab
           left_items_value = self.left_items(TODO_ITEMS_LEFT)                                                 # select the items left information
           
-          assert len(completed_ids_from_all_tab) == len(select_id)               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
+          assert len(completed_ids_from_all_tab) == 1               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
           assert select_id in completed_ids_from_all_tab            # Ensure the ID completed is the one that supposed to be
           assert len(active_ids_from_all_tab) == left_items_value   # Ensure "left items" qty has decreased after the item was completed
     
@@ -55,7 +55,7 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
      def test_5_delete_todo(self):
           actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C
           id_selection = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[1]             # select the ID to be deleted. Will be used to build the selector and to check if the right ID wa deleted.
-          element_locator = self.get_element(self.selector_builder(id_selection))    # build the selector using the ID selected
+          element_locator = self.get_element(self.selector_builder(id_selection))         # build the selector using the ID selected
           actions.move_to_element(element_locator).perform()                                      # hover over the selected item
           element_locator.find_element(*DELETE_BTN).click()                                       # locate and click on DELETE button
          

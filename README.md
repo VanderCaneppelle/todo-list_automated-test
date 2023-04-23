@@ -1,17 +1,12 @@
-# automation_testing_with_python
+# todo-list_test_automation_with_python
 
-This is a framework that will make your life easier in the field of automation testing. The goal of this framework is to making automation testing as easier as python that any one can learn and start using easily. your support will be highly appriciated in this process of making this as the easiest and effective framework in the field of automation testing. Please join us by contributing your inputs and giving this repo a star.  
-
-https://user-images.githubusercontent.com/50165036/154853172-5a883d20-1fc3-4fbc-a4f8-7411dab2954c.mp4
-
-#### Below are few useful features of this framework
-- Modular Design.
-- Report generation.
-- Mailer to send the report.
-- Events Log.
-#### Prerequisite
-- High learning sprit towards automation
-- Basic knowledge in python
+This repository tests the To do list site https://todomvc.com/examples/vanilla-es6
+This code tests the funcionalities of the To Do List such as? 
+- Creation of new todo items.
+- Delete items of the list.
+- Check as completed option.
+- Quantity is left items (X items left)
+- The buttons: All, Active, Completed, Clear Completed
 
 ## Quick Start
 - ##### Clone To Do List Automated Test into your repos folder.
@@ -19,18 +14,24 @@ https://user-images.githubusercontent.com/50165036/154853172-5a883d20-1fc3-4fbc-
     git clone https://github.com/VanderCaneppelle/todo-list_automated-test.git</pre>
 
 - ##### Create and activate virtual environment and Install required Python Packages
+    - Install pipenv
     <pre>
-    Open the project in your IDE
-    Install pipenv -> pip install pipenv
-    Create a virtual environment and install the packages - > pipenv install 
-    This command will create a new environnment and install all the packages from pipfile
+    pip install pipenv
     </pre>
+    Create a virtual environment and install the packages
+    <pre>
+    pipenv install
+    </pre> 
+    (This command will create a new environnment and install all the packages from pipfile)
+    
 
 - #### Running the script
 We can run the complete testing by using the below command
 <pre>
 pipenv run python -m pytest
-or just 
+</pre>
+or just
+<pre>
 pytest
 </pre>
 If you want to run in a different browser then you can add one more argument here like below.

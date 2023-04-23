@@ -18,7 +18,7 @@ This code tests the funcionalities of the To Do List such as?
     <pre>
     pip install pipenv
     </pre>
-    Create a virtual environment and install the packages
+    - Create a virtual environment and install the packages
     <pre>
     pipenv install
     </pre> 
@@ -26,7 +26,7 @@ This code tests the funcionalities of the To Do List such as?
     
 
 - #### Running the script
-We can run the complete testing by using the below command
+- We can run the complete testing by using the below command
 <pre>
 pipenv run python -m pytest
 </pre>
@@ -34,12 +34,16 @@ or just
 <pre>
 pytest
 </pre>
-If you want to run in a different browser then you can add one more argument here like below.
+- If you want to run in a different browser then you can add one more argument here like below.
 <pre>
 pytest --browser_name firefox
 </pre>
-If you want to run in a HEADLESS mode, go to config.py file, set HEADLESS = True then run the command pytest or pipenv run python -m pytest
+- If you want to run in a HEADLESS mode, go to config.py file, set: then run the command pytest or pipenv run python -m pytest
+<pre>
+ HEADLESS = True
 </pre>
+- then run the command pytest or pipenv run python -m pytest
+<
 
 ## Folder Structure
 - todo-list-automated-tests

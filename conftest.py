@@ -6,7 +6,6 @@ driver = None
 from datetime import datetime
 from pathlib import Path
 import os
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 
@@ -21,10 +20,10 @@ def pytest_addoption(parser):
 def setup(request):
     ''' Here we are doing setup for broweser and the url '''
     global driver
+
     #Getting the driver name and instantiating the driver
     browser_name=request.config.getoption("browser_name")
     if browser_name == "chrome":
-        # print(config.DOWNLOAD_FOLDER)
         #Configuring the Chrome browser
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("prefs", {
@@ -38,8 +37,7 @@ def setup(request):
         #Instantiating the driver with the options
         print("====================",config.DRIVER_PATH)
         driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}/chromedriver.exe",  options=chrome_options)
-        # driver.accept_next_alert = True
-        # self.verificationErrors = []
+
     elif browser_name == "firefox":
         driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}/geckodriver.exe")
     elif browser_name == "IE":
@@ -66,7 +64,7 @@ def create_report_folder():
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
-    ''' Updates the default configurations of pytes '''
+    ''' Updates the default configurations of pytest '''
     # Create the project folder
     create_report_folder()
     # custom report file

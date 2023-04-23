@@ -39,14 +39,14 @@ class BaseClass:
         return myElem
 
     class ToDoList:
-     
-        def add_new_todo_items(self,element,*items):
+        # add New items to TO DO LIST
+        def add_new_todo_items(self,element,*items): 
             for item in items:
                 self.get_element(element).send_keys(item,Keys.RETURN)
 
 
         # get all the to do task NAME and return in a list
-        def all_todo_items_list(self,TODO_LIST_ITEMS): 
+        def todo_name_list(self,TODO_LIST_ITEMS): 
             todo_items = []
             items = self.driver.find_elements(*TODO_LIST_ITEMS)
             for item in items:
@@ -56,14 +56,14 @@ class BaseClass:
             return todo_items
 
 
-        # get the text that is presetend on the bottom, with the items left information.
-        def items_left(self,TODO_COUNT ): 
-            left = self.driver.find_element(*TODO_COUNT).text
+        # get the quantity that is presetend on the bottom ->  "x items left"
+        def left_items(self,TODO_ITEMS_LEFT ): 
+            left = self.driver.find_element(*TODO_ITEMS_LEFT).text
             qty = left.split()[0]      
             return int(qty)
 
 
-        # get a list of all IDS in ALL tab
+        # Get a list of all IDS in ALL tab
         def list_of_all_ids(self,TODO_LIST_ITEMS, BTN_TO_CLICK):
             id_list = []
             self.get_element(BTN_TO_CLICK).click()
@@ -74,6 +74,7 @@ class BaseClass:
 
             return id_list
         
+        # Get a list of all IDS from the current tab
         def list_of_all_ids_current_tab(self,TODO_LIST_ITEMS):
             id_list = []
         
@@ -85,7 +86,7 @@ class BaseClass:
             return id_list
 
 
-        # get a list of all completed ids in a tab
+        # get a list of all COMPLETED IDS from current tab
         def list_of_completed_ids_current_tab(self,TODO_COMPLETED_IDS):
             completed_id_list = []
             completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
@@ -94,7 +95,9 @@ class BaseClass:
                 completed_id_list.append(value)
 
             return completed_id_list
+        
 
+        # Get a list o ACTIVE IDS from current tab 
         def list_of_active_ids_current_tab(self,TODO_COMPLETED_IDS,TODO_LIST_ITEMS):
             active_ids = []
             all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
@@ -105,13 +108,9 @@ class BaseClass:
             
             return active_ids
         
-        def selector_with_selected_id_chk(self,id):
-            CHECKBOX = (By.CSS_SELECTOR, f'li[data-id="{id}"] input[type="checkbox"]')
-
-            return CHECKBOX
-        
-        def selector_with_selected_id_del(self,id):
-            DELETE = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
+        # Build a specific selector, get an ID and add to selector.
+        def selector_builder(self,id):
+            selector = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
     
-            return DELETE
+            return selector
 

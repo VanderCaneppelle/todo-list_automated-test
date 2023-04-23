@@ -1,7 +1,7 @@
 # todo-list_test_automation_with_python
 
 This repository tests the To do list site https://todomvc.com/examples/vanilla-es6
-This code tests the funcionalities of the To Do List such as? 
+Its purpose is to test features such as: 
 - Creation of new todo items.
 - Delete items of the list.
 - Check as completed option.
@@ -25,7 +25,7 @@ This code tests the funcionalities of the To Do List such as?
     (This command will create a new environnment and install all the packages from pipfile)
     
 
-- #### Running the script
+### Running the script
 - We can run the complete testing by using the below command
 <pre>
 pipenv run python -m pytest

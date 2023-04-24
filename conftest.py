@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 import time
 import config
 driver = None
@@ -26,6 +27,7 @@ def setup(request):
     if browser_name == "chrome":
         #Configuring the Chrome browser
         chrome_options = webdriver.ChromeOptions()
+        service = Service(executable_path=f"{config.DRIVER_PATH}/chromedriver.exe")
         chrome_options.add_experimental_option("prefs", {
         "download.default_directory": config.DOWNLOAD_FOLDER, 
         "download.prompt_for_download": False,
@@ -36,7 +38,7 @@ def setup(request):
             chrome_options.add_argument('--headless')
         #Instantiating the driver with the options
         print("====================",config.DRIVER_PATH)
-        driver = webdriver.Chrome(executable_path=f"{config.DRIVER_PATH}/chromedriver.exe",  options=chrome_options)
+        driver = webdriver.Chrome(service=service,  options=chrome_options)
 
     elif browser_name == "firefox":
         driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}/geckodriver.exe")
@@ -90,8 +92,8 @@ def pytest_html_results_table_row(report, cells):
     cells.insert(3, html.td(datetime.utcnow(), class_='col-time'))
     cells.pop()
 
-@pytest.mark.hookwrapper
-def pytest_runtest_makereport(item):
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item,call):
      """
      Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.
      :param item:

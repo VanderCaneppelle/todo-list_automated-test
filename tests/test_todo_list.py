@@ -11,10 +11,11 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
  
      def test_1_add_new_todo_item(self):
           self.log().info("Todo List - Add New To Do / Items Left ")                             
-          self.add_new_todo_items(NEW_TODO_LOCATOR,*self.NEW_ITEMS)                                           # Receive the locator and list of items and add to the To Do List
-          assert self.todo_name_list(TODO_LIST_ITEMS) == self.NEW_ITEMS                                       # Ensure the list of TO DO text matches with the text entered.          
-          assert self.left_items(TODO_ITEMS_LEFT) == len(self.list_of_all_ids_current_tab(TODO_LIST_ITEMS))   # Ensure the items left information matches with the qty of active items.
-       
+          self.add_new_todo_items(NEW_TODO_LOCATOR,*self.NEW_ITEMS)                     # Receive the locator and list of items and add to the To Do List
+          expected_left_items_qty = self.list_of_active_ids_all_tab()      # Get the qty of active items to compare with the left itmes info
+         
+          self.assertAddNewItems(self.NEW_ITEMS, expected_left_items_qty) 
+
           self.log().info("Todo List - Add New To Do - PASS")
           self.log().info("Todo List - Items Left - PASS ")
 

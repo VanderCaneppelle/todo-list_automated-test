@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 import config, pytest, time
 from selenium.webdriver.common.keys import Keys
+from locator.todo_homepage_locator import *
 
 
 @pytest.mark.usefixtures("setup")
@@ -98,7 +99,7 @@ class BaseClass:
         
 
         # Get a list o ACTIVE IDS from current tab 
-        def list_of_active_ids_current_tab(self,TODO_COMPLETED_IDS,TODO_LIST_ITEMS):
+        def list_of_active_ids_all_tab(self):
             active_ids = []
             all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
             completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
@@ -108,6 +109,21 @@ class BaseClass:
             
             return active_ids
         
+
+
+
+        def list_of_active_ids_current_tab(self):
+            active_ids = []
+            all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
+            completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
+
+            for id in set(all_ids) - set(completed_ids):
+                active_ids.append(id)
+            
+            return active_ids
+        
+
+        
         # Build a specific selector, get an ID and add to selector.
         def selector_builder(self,id):
             selector = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
@@ -115,7 +131,8 @@ class BaseClass:
             return selector
         
 
-        def assertNewItems(self, expected_todo_items, expected_items_list):
-
-            assert self.todo_name_list(self.TODO_LIST_ITEMS) == self.NEW_ITEMS                                       # Ensure the list of TO DO text matches with the text entered.          
-            assert self.left_items(self.TODO_ITEMS_LEFT) == len(self.list_of_all_ids_current_tab(self.TODO_LIST_ITEMS))
+        def assertAddNewItems(self, expected_todo_items, expected_items_left):
+            
+            assert self.todo_name_list(TODO_LIST_ITEMS) == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
+            assert self.left_items(TODO_ITEMS_LEFT) == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
+    

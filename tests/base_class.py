@@ -113,4 +113,9 @@ class BaseClass:
             selector = (By.CSS_SELECTOR, f'li[data-id="{id}"]')
     
             return selector
+        
 
+        def assertNewItems(self, expected_todo_items, expected_items_list):
+
+            assert self.todo_name_list(self.TODO_LIST_ITEMS) == self.NEW_ITEMS                                       # Ensure the list of TO DO text matches with the text entered.          
+            assert self.left_items(self.TODO_ITEMS_LEFT) == len(self.list_of_all_ids_current_tab(self.TODO_LIST_ITEMS))

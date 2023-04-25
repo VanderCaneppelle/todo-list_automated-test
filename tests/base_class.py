@@ -23,14 +23,6 @@ class BaseClass:
         logger.setLevel(logging.DEBUG)
         return logger
 
-    def verifyLinkPresence(self, text):
-        element = WebDriverWait(self.driver, 10).until(
-        EC.presence_of_element_located((By.LINK_TEXT, text)))
-        return element
-
-    def selectOptionByText(self,locator,text):
-        sel = Select(locator)
-        sel.select_by_visible_text(text)
 
     def get_element(self, element):
         ''' Returns the element by finding from the page
@@ -115,9 +107,9 @@ class BaseClass:
             for id in completed_ids:
                 value = id.get_attribute("data-id")
                 completed_id_list.append(value)
-
-
             return completed_id_list
+        
+        # Get a list o completed ids from completed tab 
         def list_of_completed_ids_completed_tab(self):
             completed_id_list = []
             completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
@@ -128,6 +120,7 @@ class BaseClass:
             return completed_id_list
         
 
+        # Get list o completed ids from active tab - should always be empty
         def list_of_completed_ids_active_tab(self):
             completed_id_list = []
             completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
@@ -150,7 +143,6 @@ class BaseClass:
             return active_ids
         
 
-
         def list_of_active_ids_active_tab(self):
             active_ids = []
             all_ids = self.list_of_all_ids_current_tab()
@@ -162,6 +154,7 @@ class BaseClass:
             return active_ids
         
         
+        # Get a list of all ids from active tabs       
         def list_of_all_ids_active_tab(self):
             id_list = []
             ids = self.driver.find_elements(*TODO_LIST_ITEMS)
@@ -178,16 +171,18 @@ class BaseClass:
     
             return selector
         
+        # Clicks on specific checkbox, selected by ID.
         def click_checkbox(self, select_id):
             element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
             element.find_element(*CHECKBOX).click() 
         
 
+        # Delete a specific items, selected by ID
         def delete_selected_id(self, id_selection):
-            actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C
+            actions = ActionChains(self.driver)                                             # instantiating the ActionsChains 
             element_locator = self.get_element(self.selector_builder(id_selection))         # build the selector using the ID selected
-            actions.move_to_element(element_locator).perform()
-            element_locator.find_element(*DELETE_BTN).click()          
+            actions.move_to_element(element_locator).perform()                              # hover over the element
+            element_locator.find_element(*DELETE_BTN).click()                               # Click on delete button of the id selected.
         
 
         def assert_correct_items_added(self, expected_todo_items, expected_items_left): 
@@ -205,12 +200,12 @@ class BaseClass:
             assert sorted(active_ids_from_all_tab) == sorted(active_ids_from_active_tab)
 
 
-        def assert_delete_id_not_in_active_tab(self, id_selection):
+        def assert_deleted_id_not_in_active_tab(self, id_selection):
             assert id_selection  not in self.list_of_active_ids_active_tab()
 
 
-        def assert_delete_id_not_in_all_tab(self, id_selection):
-            assert id_selection not in self.list_of_active_ids_all_tab()
+        def assert_deleted_id_not_in_all_tab(self, id_selection):
+            assert id_selection not in self.list_of_all_ids_all_tab()
 
 
         def assert_all_completed_ids_are_deleted(self,completed_ids_all_tab,completed_tab_all_ids):    

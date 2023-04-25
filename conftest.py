@@ -1,7 +1,6 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-import time
 import config
 driver = None
 from datetime import datetime
@@ -23,7 +22,7 @@ def setup(request):
     global driver
 
     #Getting the driver name and instantiating the driver
-    browser_name=request.config.getoption("browser_name")
+    browser_name=request.config.getoption("browser_name")  # call the addoption config
     if browser_name == "chrome":
         #Configuring the Chrome browser
         chrome_options = webdriver.ChromeOptions()
@@ -41,7 +40,8 @@ def setup(request):
         driver = webdriver.Chrome(service=service,  options=chrome_options)
 
     elif browser_name == "firefox":
-        driver = webdriver.Firefox(executable_path=f"{config.DRIVER_PATH}/geckodriver.exe")
+        service = Service(executable_path=f"{config.DRIVER_PATH}/geckodriver.exe")
+        driver = webdriver.Firefox(service=service)
     elif browser_name == "IE":
         print("IE driver")
     #opening the driver and maximizing the window

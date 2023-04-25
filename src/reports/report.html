@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>To Do list Testing</h1>
-    <p>Report generated on 25-Apr-2023 at 07:31:19 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 25-Apr-2023 at 10:22:29 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -455,8 +455,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.2</td></tr></table>
     <h2>Summary</h2>
-    <p>6 tests ran in 14.44 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">3 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>6 tests ran in 5.50 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">6 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -468,46 +468,13 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable" col="duration">Duration</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="5">No results found. Try to check the filters</th></tr></thead>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_2_mark_item_as_completed_and_test_left_items</td>
-          <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">1.05</td></tr>
-        <tr class="collapsed">
-          <td class="extra" colspan="5">
-            <div><div><img src="tests/test_todo_list.py_TestToDoList_test_2_mark_item_as_completed_and_test_left_items.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;tests.test_todo_list.TestToDoList object at 0x000001ABA2A97890&gt;<br/><br/>    def test_2_mark_item_as_completed_and_test_left_items(self):<br/>         select_id = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[0]  # Select an ID to be marked as completed, will be use to build the selector<br/>         element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element<br/>         element.find_element(*CHECKBOX).click()                           # Click on the checkbox of the element selected.<br/>    <br/>&gt;        active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)   # select all the active IDS from ALL tab<br/><span class="error">E        TypeError: BaseClass.ToDoList.list_of_active_ids_current_tab() takes 1 positional argument but 3 were given</span><br/><br/>tests\test_todo_list.py:28: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_4_active_tab</td>
-          <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">1.03</td></tr>
-        <tr class="collapsed">
-          <td class="extra" colspan="5">
-            <div><div><img src="tests/test_todo_list.py_TestToDoList_test_4_active_tab.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;tests.test_todo_list.TestToDoList object at 0x000001ABA334E250&gt;<br/><br/>    def test_4_active_tab(self):<br/>         self.get_element(ALL_BTN).click()                                                                 # Click on ALL button<br/>&gt;        active_ids_from_all_tab = self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS) # Get active items frmo ALL tab, to compare with active item from ACTIVE tab.<br/><span class="error">E        TypeError: BaseClass.ToDoList.list_of_active_ids_current_tab() takes 1 positional argument but 3 were given</span><br/><br/>tests\test_todo_list.py:50: TypeError<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_5_delete_todo</td>
-          <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">1.33</td></tr>
-        <tr class="collapsed">
-          <td class="extra" colspan="5">
-            <div><div><img src="tests/test_todo_list.py_TestToDoList_test_5_delete_todo.png" alt="screenshot" style="width:304px;height:228px;" onclick="window.open(this.src)" align="right"/></div></div>
-            <div class="log">self = &lt;tests.test_todo_list.TestToDoList object at 0x000001ABA334C550&gt;<br/><br/>    def test_5_delete_todo(self):<br/>         actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C<br/>         id_selection = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)[1]             # select the ID to be deleted. Will be used to build the selector and to check if the right ID wa deleted.<br/>         element_locator = self.get_element(self.selector_builder(id_selection))         # build the selector using the ID selected<br/>         actions.move_to_element(element_locator).perform()                                      # hover over the selected item<br/>         element_locator.find_element(*DELETE_BTN).click()                                       # locate and click on DELETE button<br/>    <br/>&gt;        assert id_selection  not in self.list_of_active_ids_current_tab(TODO_COMPLETED_IDS,TODO_LIST_ITEMS)      # Ensure deleted ID is not present on ACTIVE tab.<br/><span class="error">E        TypeError: BaseClass.ToDoList.list_of_active_ids_current_tab() takes 1 positional argument but 3 were given</span><br/><br/>tests\test_todo_list.py:63: TypeError<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_todo_list.py::TestToDoList::test_1_add_new_todo_item</td>
           <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">5.32</td></tr>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">2.77</td></tr>
         <tr class="collapsed">
           <td class="extra" colspan="5">
             <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>==================== C:\Users\vande\repos\todo-list-automated_tests\src\drivers
@@ -517,10 +484,40 @@ INFO     test_1_add_new_todo_item:test_todo_list.py:20 Todo List - Items Left - 
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_2_mark_item_as_completed_and_test_left_items</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">0.10</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
           <td class="col-name">tests/test_todo_list.py::TestToDoList::test_3_completed_tab</td>
           <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">1.06</td></tr>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">0.04</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_4_active_tab</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">0.09</td></tr>
+        <tr class="collapsed">
+          <td class="extra" colspan="5">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/test_todo_list.py::TestToDoList::test_5_delete_todo</td>
+          <td>report.description</td>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">0.35</td></tr>
         <tr class="collapsed">
           <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody>
@@ -529,8 +526,8 @@ INFO     test_1_add_new_todo_item:test_todo_list.py:20 Todo List - Items Left - 
           <td class="col-result">Passed</td>
           <td class="col-name">tests/test_todo_list.py::TestToDoList::test_6_clear_completed_btn</td>
           <td>report.description</td>
-          <td class="col-time">2023-04-25 10:31:19.958752</td>
-          <td class="col-duration">4.18</td></tr>
+          <td class="col-time">2023-04-25 13:22:29.006527</td>
+          <td class="col-duration">2.07</td></tr>
         <tr class="collapsed">
           <td class="extra" colspan="5">
             <div class="empty log">No log output captured.</div></td></tr></tbody></table></body></html>

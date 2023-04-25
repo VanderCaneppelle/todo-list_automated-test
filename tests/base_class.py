@@ -47,7 +47,7 @@ class BaseClass:
 
 
         # get all the to do task NAME and return in a list
-        def todo_name_list(self,TODO_LIST_ITEMS): 
+        def todo_name_list(self): 
             todo_items = []
             items = self.driver.find_elements(*TODO_LIST_ITEMS)
             for item in items:
@@ -58,16 +58,15 @@ class BaseClass:
 
 
         # get the quantity that is presetend on the bottom ->  "x items left"
-        def left_items(self,TODO_ITEMS_LEFT ): 
+        def left_items(self ): 
             left = self.driver.find_element(*TODO_ITEMS_LEFT).text
             qty = left.split()[0]      
             return int(qty)
 
 
         # Get a list of all IDS in ALL tab
-        def list_of_all_ids(self,TODO_LIST_ITEMS, BTN_TO_CLICK):
+        def list_of_all_ids_all_tab(self):
             id_list = []
-            self.get_element(BTN_TO_CLICK).click()
             ids = self.driver.find_elements(*TODO_LIST_ITEMS)
             for id in ids:
                 value = id.get_attribute("data-id")
@@ -76,7 +75,7 @@ class BaseClass:
             return id_list
         
         # Get a list of all IDS from the current tab
-        def list_of_all_ids_current_tab(self,TODO_LIST_ITEMS):
+        def list_of_all_ids_current_tab(self):
             id_list = []
         
             ids = self.driver.find_elements(*TODO_LIST_ITEMS)
@@ -88,7 +87,26 @@ class BaseClass:
 
 
         # get a list of all COMPLETED IDS from current tab
-        def list_of_completed_ids_current_tab(self,TODO_COMPLETED_IDS):
+        def list_of_completed_ids_all_tab(self):
+            completed_id_list = []
+            completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
+            for id in completed_ids:
+                value = id.get_attribute("data-id")
+                completed_id_list.append(value)
+
+
+            return completed_id_list
+        def list_of_completed_ids_completed_tab(self):
+            completed_id_list = []
+            completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
+            for id in completed_ids:
+                value = id.get_attribute("data-id")
+                completed_id_list.append(value)
+
+            return completed_id_list
+        
+
+        def list_of_completed_ids_active_tab(self):
             completed_id_list = []
             completed_ids = self.driver.find_elements(*TODO_COMPLETED_IDS)
             for id in completed_ids:
@@ -101,8 +119,8 @@ class BaseClass:
         # Get a list o ACTIVE IDS from current tab 
         def list_of_active_ids_all_tab(self):
             active_ids = []
-            all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
-            completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
+            all_ids = self.list_of_all_ids_all_tab()
+            completed_ids = self.list_of_completed_ids_all_tab()
 
             for id in set(all_ids) - set(completed_ids):
                 active_ids.append(id)
@@ -111,17 +129,24 @@ class BaseClass:
         
 
 
-
-        def list_of_active_ids_current_tab(self):
+        def list_of_active_ids_active_tab(self):
             active_ids = []
-            all_ids = self.list_of_all_ids_current_tab(TODO_LIST_ITEMS)
-            completed_ids = self.list_of_completed_ids_current_tab(TODO_COMPLETED_IDS)
+            all_ids = self.list_of_all_ids_current_tab()
+            completed_ids = self.list_of_completed_ids_active_tab()
 
             for id in set(all_ids) - set(completed_ids):
                 active_ids.append(id)
             
             return active_ids
         
+        def list_of_all_ids_active_tab(self):
+            id_list = []
+            ids = self.driver.find_elements(*TODO_LIST_ITEMS)
+            for id in ids:
+                value = id.get_attribute("data-id")
+                id_list.append(value)
+
+            return id_list
 
         
         # Build a specific selector, get an ID and add to selector.
@@ -133,6 +158,11 @@ class BaseClass:
 
         def assertAddNewItems(self, expected_todo_items, expected_items_left):
             
-            assert self.todo_name_list(TODO_LIST_ITEMS) == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
-            assert self.left_items(TODO_ITEMS_LEFT) == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
+            assert self.todo_name_list() == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
+            assert self.left_items() == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
+    
+        def AssertItemIsChecked(self,expected_id):
+            assert len(self.list_of_completed_ids_all_tab()) == 1               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
+            assert expected_id in self.list_of_completed_ids_all_tab()            # Ensure the ID completed is the one that supposed to be
+            assert len(self.list_of_active_ids_all_tab()) == self.left_items()   # Ensure "left items" qty has decreased after the item was completed
     

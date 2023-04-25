@@ -7,6 +7,7 @@ from selenium.webdriver.support.select import Select
 import config, pytest, time
 from selenium.webdriver.common.keys import Keys
 from locator.todo_homepage_locator import *
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 @pytest.mark.usefixtures("setup")
@@ -40,6 +41,23 @@ class BaseClass:
         return myElem
 
     class ToDoList:
+
+        def go_to_completed_tab(self):
+            self.get_element(COMPLETE_BTN).click() 
+            
+
+        def go_to_all_tab(self):
+            self.get_element(ALL_BTN).click() 
+
+        
+        def go_to_active_tab(self):
+            self.get_element(ACTIVE_BTN).click() 
+
+        
+        def clear_completed(self):
+            self.get_element(CLEAR_COMPLETED_BTN).click()       
+
+ 
         # add New items to TO DO LIST
         def add_new_todo_items(self,element,*items): 
             for item in items:
@@ -156,6 +174,13 @@ class BaseClass:
             return selector
         
 
+        def delete_selected_id(self, id_selection):
+            actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C
+            element_locator = self.get_element(self.selector_builder(id_selection))         # build the selector using the ID selected
+            actions.move_to_element(element_locator).perform()
+            element_locator.find_element(*DELETE_BTN).click()          
+        
+
         def assertAddNewItems(self, expected_todo_items, expected_items_left): 
             assert self.todo_name_list() == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
             assert self.left_items() == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
@@ -175,4 +200,19 @@ class BaseClass:
 
         def AssertActiveTabItems(self, active_ids_from_all_tab, active_ids_from_active_tab):
             assert sorted(active_ids_from_all_tab) == sorted(active_ids_from_active_tab)
+
+
+        def AssertSelectIDIsDeleted(self, id_selection):
+            assert id_selection  not in self.list_of_active_ids_active_tab()
+
+
+        def AssertSelectedIDNotInAllTab(self, id_selection):
+            assert id_selection not in self.list_of_active_ids_all_tab()
+
+
+        def AssertAllCompletedIDsDeleted(self,completed_ids_all_tab,completed_tab_all_ids):    
+            assert len(completed_ids_all_tab) == 0      # Ensure the  ALL TAB has no completed item on it
+            assert len(completed_tab_all_ids) == 0      # Ensure the COMPLETE tab is empty 
+       
+     
     

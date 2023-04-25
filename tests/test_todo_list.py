@@ -31,41 +31,45 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
      def test_3_completed_tab(self):
          
           select_id = self.list_of_completed_ids_all_tab()   # get the completed IDS from ALL TAB, to check if its the same on COMPLETED TAB
-          self.get_element(COMPLETE_BTN).click()             # click on COMPLETED button
+          self.go_to_completed_tab()
+          # self.get_element(COMPLETE_BTN).click()             # click on COMPLETED button
 
           self.AssertCompletedTabInfo(select_id)            # Ensure the ID checked as completed in ALL TAB is the only ID displayed on COMPLETED TAB
           
 
      def test_4_active_tab(self):
-          self.get_element(ALL_BTN).click()                           # Go to ALL TAB to get the list of items
+          self.go_to_all_tab()
+          # self.get_element(ALL_BTN).click()                           # Go to ALL TAB to get the list of items
           active_ids_from_all_tab = self.list_of_active_ids_all_tab() # Get active items frmo ALL TAB, to compare with active item from ACTIVE TAB.
-          self.get_element(ACTIVE_BTN).click()                        # Click on ACTIVE
+          self.go_to_active_tab()
+          # self.get_element(ACTIVE_BTN).click()                        # Click on ACTIVE
           active_ids_from_active_tab = self.list_of_all_ids_all_tab()  # Get list of all ids from ACTIVE TAB
 
           self.AssertActiveTabItems(active_ids_from_all_tab, active_ids_from_active_tab)   # Ensure the active items on ACTIVE tab are the same presented on ALL tab
 
 
      def test_5_delete_todo(self):
-          actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C
           id_selection = self.list_of_all_ids_current_tab()[1]             # select the ID to be deleted. Will be used to build the selector and to check if the right ID wa deleted.
-          element_locator = self.get_element(self.selector_builder(id_selection))         # build the selector using the ID selected
-          actions.move_to_element(element_locator).perform()                                      # hover over the selected item
-          element_locator.find_element(*DELETE_BTN).click()                                       # locate and click on DELETE button
+          self.delete_selected_id(id_selection)                                      # hover over the selected item
          
-          assert id_selection  not in self.list_of_active_ids_active_tab()      # Ensure deleted ID is not present on ACTIVE tab.
-          self.get_element(ALL_BTN).click()                                                                      
-          assert id_selection not in self.list_of_active_ids_active_tab()       # Ensure deleted ID is not present on ALL tab.
-          
+          self.AssertSelectIDIsDeleted(id_selection)      # Ensure deleted ID is not present on ACTIVE TAB.
+          self.go_to_all_tab()
+          #  self.get_element(ALL_BTN).click()                                                                      
+          self.AssertSelectedIDNotInAllTab(id_selection)  # Ensure deleted ID is not present on ALL TAB.
+
      
      def test_6_clear_completed_btn(self):
-
-          self.get_element(CLEAR_COMPLETED_BTN).click()                                        # Locate the CLEAR COMPLETED button and click
-          all_tab_completed_id = self.list_of_completed_ids_completed_tab()    # Get all the completed ID from ALL tab
-          self.get_element(COMPLETE_BTN).click()                                               # Go to COMPLETE tab
+          self.clear_completed()
+          # self.get_element(CLEAR_COMPLETED_BTN).click()                                        # Locate the CLEAR COMPLETED button and click
+          completed_ids_all_tab = self.list_of_completed_ids_all_tab()    # Get all the completed ID from ALL tab
+          self.go_to_completed_tab()                                               # Go to COMPLETE tab
           completed_tab_all_ids = self.list_of_all_ids_current_tab()            # Get all IDS from COMPLETE tab
+     
+          self.AssertAllCompletedIDsDeleted(completed_ids_all_tab,completed_tab_all_ids) 
 
-          assert len(all_tab_completed_id) == 0        # Ensure the  ALL tab has no completed item on it
-          assert len(completed_tab_all_ids)  == 0      # Ensure the COMPLETE tab is empty 
+     def go_to_completed_tab(self):
+         self.get_element(COMPLETE_BTN).click() 
+ 
        
      
 

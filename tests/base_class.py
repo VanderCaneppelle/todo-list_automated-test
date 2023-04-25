@@ -59,9 +59,9 @@ class BaseClass:
 
  
         # add New items to TO DO LIST
-        def add_new_todo_items(self,element,*items): 
+        def add_new_todo_items(self,*items): 
             for item in items:
-                self.get_element(element).send_keys(item,Keys.RETURN)
+                self.get_element(NEW_TODO_LOCATOR).send_keys(item,Keys.RETURN)
 
 
         # get all the to do task NAME and return in a list
@@ -157,6 +157,7 @@ class BaseClass:
             
             return active_ids
         
+        
         def list_of_all_ids_active_tab(self):
             id_list = []
             ids = self.driver.find_elements(*TODO_LIST_ITEMS)
@@ -173,6 +174,10 @@ class BaseClass:
     
             return selector
         
+        def click_checkbox(self, select_id):
+            element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
+            element.find_element(*CHECKBOX).click() 
+        
 
         def delete_selected_id(self, id_selection):
             actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C
@@ -181,38 +186,46 @@ class BaseClass:
             element_locator.find_element(*DELETE_BTN).click()          
         
 
-        def assertAddNewItems(self, expected_todo_items, expected_items_left): 
+        def assert_correct_items_added(self, expected_todo_items, expected_items_left): 
             assert self.todo_name_list() == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
             assert self.left_items() == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
     
 
-        def AssertItemIsChecked(self,expected_id):
-            assert len(self.list_of_completed_ids_all_tab()) == 1               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
-            assert expected_id in self.list_of_completed_ids_all_tab()            # Ensure the ID completed is the one that supposed to be
-            assert len(self.list_of_active_ids_all_tab()) == self.left_items()   # Ensure "left items" qty has decreased after the item was completed
-
-
-        def AssertCompletedTabInfo(self,select_id):
+        def assert_complete_tab_shows_correct_info(self,select_id):
             all_ids_from_completed_tab = self.list_of_all_ids_current_tab()  # get all ids present on COMPLETED tab.
             assert len(all_ids_from_completed_tab) == 1     # Ensure there is only one item present on completed tab
             assert all_ids_from_completed_tab == select_id  # Ensure the item presented on COMPLETED tab is the same present on ALL tab
 
 
-        def AssertActiveTabItems(self, active_ids_from_all_tab, active_ids_from_active_tab):
+        def assert_active_tab_shows_correct_info(self, active_ids_from_all_tab, active_ids_from_active_tab):
             assert sorted(active_ids_from_all_tab) == sorted(active_ids_from_active_tab)
 
 
-        def AssertSelectIDIsDeleted(self, id_selection):
+        def assert_delete_id_not_in_active_tab(self, id_selection):
             assert id_selection  not in self.list_of_active_ids_active_tab()
 
 
-        def AssertSelectedIDNotInAllTab(self, id_selection):
+        def assert_delete_id_not_in_all_tab(self, id_selection):
             assert id_selection not in self.list_of_active_ids_all_tab()
 
 
-        def AssertAllCompletedIDsDeleted(self,completed_ids_all_tab,completed_tab_all_ids):    
+        def assert_all_completed_ids_are_deleted(self,completed_ids_all_tab,completed_tab_all_ids):    
             assert len(completed_ids_all_tab) == 0      # Ensure the  ALL TAB has no completed item on it
             assert len(completed_tab_all_ids) == 0      # Ensure the COMPLETE tab is empty 
        
+       
+        def assert_item_is_unchecked(self):
+            assert len(self.list_of_completed_ids_all_tab()) == 0               # Ensure there is only 1 ID completed, as I only checked 1 item as completed    
+            assert len(self.list_of_active_ids_all_tab()) == self.left_items() # Ensure the ID completed is the one that supposed to be
      
+
+        def assert_item_is_checked(self,expected_id):
+            assert len(self.list_of_completed_ids_all_tab()) == 1               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
+            assert expected_id in self.list_of_completed_ids_all_tab()            # Ensure the ID completed is the one that supposed to be
+            assert len(self.list_of_active_ids_all_tab()) == self.left_items()   # Ensure "left items" qty has decreased after the item was completed
+        
+       
+        def assert_complete_tab_is_empty(self):
+            assert len(self.list_of_all_ids_current_tab()) == 0
+
     

@@ -1,10 +1,12 @@
 from tests.base_class import BaseClass
+from selenium.webdriver.common.by import By
 
 class TestToDoList(BaseClass, BaseClass.ToDoList): 
 
-     new_items = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test']
+     new_items = ['Open a Jira ticket', 'Close Test Run', 'Smoke Test', 'Close Sprint']
  
      def test_1_add_new_todo_items(self):  # this test cover the all tab also.
+
           # self.log().info("Todo List - Add New To Do / Items Left ")                             
           self.add_new_todo_items(*self.new_items)                         # Receive the locator and list of items and add to the To Do List
           expected_left_items_qty = self.list_of_active_ids_all_tab()      # Get the qty of active items to compare with the left itmes info
@@ -60,6 +62,19 @@ class TestToDoList(BaseClass, BaseClass.ToDoList):
           completed_tab_all_ids = self.list_of_all_ids_current_tab()      # Get all IDS from COMPLETE TAB
      
           self.assert_all_completed_ids_are_deleted(completed_ids_from_all_tab,completed_tab_all_ids) 
+
+     def test_8_complete_active_all(self):
+          self.go_to_all_tab()
+          ids_all_tab = self.list_of_all_ids_all_tab()
+          self.click_toggle_all()  # complete all
+          self.assert_all_todos_are_completed(ids_all_tab)  # Ensure all items are completed
+          self.click_toggle_all()  # active all 
+          self.assert_all_todos_are_active(ids_all_tab)  # Ensure all items are active
+
+
+
+
+
 
        
      

@@ -15,4 +15,5 @@ TODO_LIST_ITEMS =(By.CSS_SELECTOR,'[data-id]')
 TODO_IDS = (By.TAG_NAME,'li')
 TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
 CHECKBOX = (By.CSS_SELECTOR,'input[type="checkbox"]')
+TOGGLE_ALL = (By.CLASS_NAME, 'toggle-all')
 

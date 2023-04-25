@@ -56,6 +56,10 @@ class BaseClass:
         
         def clear_completed(self):
             self.get_element(CLEAR_COMPLETED_BTN).click()       
+                
+            
+        def click_toggle_all(self):
+            self.get_element(TOGGLE_ALL).click()
 
  
         # add New items to TO DO LIST
@@ -227,5 +231,15 @@ class BaseClass:
        
         def assert_complete_tab_is_empty(self):
             assert len(self.list_of_all_ids_current_tab()) == 0
+
+        
+        def assert_all_todos_are_completed(self, ids_all_tab):
+            assert len(self.list_of_active_ids_all_tab()) == 0
+            assert sorted(self.list_of_completed_ids_all_tab()) == sorted(ids_all_tab)
+        
+        
+        def assert_all_todos_are_active(self, ids_all_tab):
+            assert len(self.list_of_completed_ids_all_tab()) == 0
+            assert sorted(self.list_of_active_ids_all_tab()) == sorted(ids_all_tab)
 
     

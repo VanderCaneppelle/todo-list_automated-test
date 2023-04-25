@@ -25,28 +25,25 @@ class TestToDoList(BaseClass, BaseClass.ToDoList): # testsuite
           element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
           element.find_element(*CHECKBOX).click()                           # Click on the checkbox of the element selected.
                
-          self.AssertMarkAsCompleted(select_id) # Ensure selected ID 
-
-    
+          self.AssertItemIsChecked(select_id) # Ensure selected ID  
  
          
      def test_3_completed_tab(self):
          
-          select_id = self.list_of_completed_ids_all_tab()          # get the completed IDS from ALL tab, to check if its the same on COMPLETED tab
-          self.get_element(COMPLETE_BTN).click()                                          # click on COMPLETED button
-          all_ids_from_completed_tab = self.list_of_all_ids_current_tab()  # get all ids present on COMPLETED tab.
+          select_id = self.list_of_completed_ids_all_tab()   # get the completed IDS from ALL TAB, to check if its the same on COMPLETED TAB
+          self.get_element(COMPLETE_BTN).click()             # click on COMPLETED button
 
-          assert len(all_ids_from_completed_tab) == 1     # Ensure there is only one item present on completed tab
-          assert all_ids_from_completed_tab == select_id  # Ensure the item presented on COMPLETED tab is the same present on ALL tab
-         
+          self.AssertCompletedTabInfo(select_id)            # Ensure the ID checked as completed in ALL TAB is the only ID displayed on COMPLETED TAB
           
-     def test_4_active_tab(self):
-          self.get_element(ALL_BTN).click()                                                                 # Click on ALL button
-          active_ids_from_all_tab = self.list_of_active_ids_all_tab() # Get active items frmo ALL tab, to compare with active item from ACTIVE tab.
-          self.get_element(ACTIVE_BTN).click()                                                              # Click on ACTIVE
-          active_list = self.list_of_all_ids_all_tab()                                   # Get list of all ids from ACTIVE tab
 
-          assert sorted(active_ids_from_all_tab) == sorted(active_list)    # Ensure the active items on ACTIVE tab are the same presented on ALL tab
+     def test_4_active_tab(self):
+          self.get_element(ALL_BTN).click()                           # Go to ALL TAB to get the list of items
+          active_ids_from_all_tab = self.list_of_active_ids_all_tab() # Get active items frmo ALL TAB, to compare with active item from ACTIVE TAB.
+          self.get_element(ACTIVE_BTN).click()                        # Click on ACTIVE
+          active_ids_from_active_tab = self.list_of_all_ids_all_tab()  # Get list of all ids from ACTIVE TAB
+
+          self.AssertActiveTabItems(active_ids_from_all_tab, active_ids_from_active_tab)   # Ensure the active items on ACTIVE tab are the same presented on ALL tab
+
 
      def test_5_delete_todo(self):
           actions = ActionChains(self.driver)                                             # instantiating the ActionsChains C

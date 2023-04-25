@@ -156,13 +156,23 @@ class BaseClass:
             return selector
         
 
-        def assertAddNewItems(self, expected_todo_items, expected_items_left):
-            
+        def assertAddNewItems(self, expected_todo_items, expected_items_left): 
             assert self.todo_name_list() == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
             assert self.left_items() == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
     
+
         def AssertItemIsChecked(self,expected_id):
             assert len(self.list_of_completed_ids_all_tab()) == 1               # Ensure there is only 1 ID completed, as I only checked 1 item as completed
             assert expected_id in self.list_of_completed_ids_all_tab()            # Ensure the ID completed is the one that supposed to be
             assert len(self.list_of_active_ids_all_tab()) == self.left_items()   # Ensure "left items" qty has decreased after the item was completed
+
+
+        def AssertCompletedTabInfo(self,select_id):
+            all_ids_from_completed_tab = self.list_of_all_ids_current_tab()  # get all ids present on COMPLETED tab.
+            assert len(all_ids_from_completed_tab) == 1     # Ensure there is only one item present on completed tab
+            assert all_ids_from_completed_tab == select_id  # Ensure the item presented on COMPLETED tab is the same present on ALL tab
+
+
+        def AssertActiveTabItems(self, active_ids_from_all_tab, active_ids_from_active_tab):
+            assert sorted(active_ids_from_all_tab) == sorted(active_ids_from_active_tab)
     

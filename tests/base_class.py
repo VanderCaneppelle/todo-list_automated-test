@@ -3,7 +3,6 @@ import logging
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.select import Select
 import config, pytest, time
 from selenium.webdriver.common.keys import Keys
 from locator.todo_homepage_locator import *
@@ -237,4 +236,8 @@ class BaseClass:
             assert len(self.list_of_completed_ids_all_tab()) == 0
             assert sorted(self.list_of_active_ids_all_tab()) == sorted(ids_all_tab)
 
-    
+        def edit_todo(self, select_id):
+            actions =ActionChains(self.driver)
+            element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
+            actions.double_click(element).perform()
+           

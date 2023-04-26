@@ -16,4 +16,6 @@ TODO_IDS = (By.TAG_NAME,'li')
 TODO_COMPLETED_IDS = (By.CSS_SELECTOR,'li.completed')
 CHECKBOX = (By.CSS_SELECTOR,'input[type="checkbox"]')
 TOGGLE_ALL = (By.CLASS_NAME, 'toggle-all')
+TODO_LABEL = (By.CSS_SELECTOR, 'label')
+EDIT_TODO = (By.CLASS_NAME, 'edit')
 

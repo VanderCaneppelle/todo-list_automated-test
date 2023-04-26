@@ -78,44 +78,14 @@ class TestToDoList(BaseClass, BaseClass.ToDoList):
           self.click_toggle_all()                           # active all 
           self.assert_all_todos_are_active(all_ids_all_tab)     # Ensure all items are active
 
-     # def test_9_edit_todo(self):
-
-     #      selected_id = self.list_of_active_ids_all_tab()[0]
-     #      actions =ActionChains(self.driver)
-     #      element = self.get_element(self.selector_builder(selected_id))      # Build a selector and store it on element
-     #      actions.double_click(element).perform()
-     #      time.sleep(2)
-     #      # edit_field = self.driver.switch_to.active_element
-     #      edit_field.clear()
-  
-     #      edit_field.send_keys("todo edited",Keys.RETURN)
-     #      assert "todo edited" in self.todo_name_list()
-     #      time.sleep(5)
-
-     # def test_9_edit_todo(self):
-     #      selected_id = self.list_of_active_ids_all_tab()[0]
-     #      actions = ActionChains(self.driver)
-     #      element = self.get_element(self.selector_builder(selected_id))
-     #      actions.double_click(element).perform()
-     #      time.sleep(2)
-     #      edit_field = self.driver.switch_to.active_element  # obter o elemento de edição de tarefa novamente
-     #      edit_field.clear()
-     #      edit_field.send_keys("todo edited", Keys.RETURN)
-     #      assert "todo edited" in self.todo_name_list()
-     #      time.sleep(5)
-
-
 
      def test_9_edit_todo(self):
            selected_id = self.list_of_active_ids_all_tab()[0]
-           actions = ActionChains(self.driver)
-           element = self.get_element(self.selector_builder(selected_id))
-           actions.double_click(element).perform()
-           element.find_element(*EDIT_TODO).send_keys(Keys.CONTROL + "a")
-           element.find_element(*EDIT_TODO).send_keys(Keys.BACKSPACE)
-           element.find_element(*EDIT_TODO).send_keys("edited todo",Keys.RETURN)
-           assert "edited todo" in self.todo_name_list()
-           time.sleep(3)
+           self.double_click_and_edit_todo(selected_id)
+           self.assert_todo_is_changed()
+
+
+
 
        
      

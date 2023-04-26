@@ -170,6 +170,7 @@ class BaseClass:
     
             return selector
         
+        
         # Clicks on specific checkbox, selected by ID.
         def click_checkbox(self, select_id):
             element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
@@ -183,7 +184,16 @@ class BaseClass:
             actions.move_to_element(element_locator).perform()                              # hover over the element
             element_locator.find_element(*DELETE_BTN).click()                               # Click on delete button of the id selected.
         
+        
+        def double_click_and_edit_todo(self, selected_id):
+            actions = ActionChains(self.driver)
+            element = self.get_element(self.selector_builder(selected_id))
+            actions.double_click(element).perform()
+            element.find_element(*EDIT_TODO).send_keys(Keys.CONTROL + "a")
+            element.find_element(*EDIT_TODO).send_keys(Keys.BACKSPACE)
+            element.find_element(*EDIT_TODO).send_keys("edited todo",Keys.RETURN)
 
+        
         def assert_correct_items_added(self, expected_todo_items, expected_items_left): 
             assert self.todo_name_list() == expected_todo_items      # Ensure the list of TO DO text matches with the text entered.
             assert self.left_items() == len(expected_items_left)          # Ensure the items left information matches with the qty of active items.
@@ -241,3 +251,5 @@ class BaseClass:
             element = self.get_element(self.selector_builder(select_id))      # Build a selector and store it on element
             actions.double_click(element).perform()
            
+        def assert_todo_is_changed(self):
+            assert "edited todo" in self.todo_name_list()
